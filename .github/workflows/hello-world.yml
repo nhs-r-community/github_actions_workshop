@@ -1,0 +1,11 @@
+name: say Hello World!  #nmae of workflow
+
+on:
+    workflow_dispatch:
+
+jobs:
+    hello-world: #name of job
+        runs-on: ubuntu-latest
+        steps: #what will the job actaully do
+            - name: Print Hello World  #list with "-"
+                run: echo Hello Worl  # what the job code is 
