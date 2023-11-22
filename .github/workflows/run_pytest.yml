@@ -1,0 +1,27 @@
+name: Run Pytest #running pytest on github codespaces
+
+on:
+    workflow_dispatch:
+    pull_request:
+        types:
+            - opened
+            - reopened
+            - synchronize
+            - ready_for_review
+
+jobs:
+    pytest:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout the repo # names are optional, to make code readable
+              uses: actions/checkout@v3 # add 2 spaces before uses
+            - name: Set up Python
+              uses: actions/setup-python@v3
+              with:
+                python-version: "3.x"
+            - name: Install dependences
+              run:
+                python -m pip install --upgrade pip
+                pip install -r requirements.txt
+            - name: Test with pytest
+              run: pytest
