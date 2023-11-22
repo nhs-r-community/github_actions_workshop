@@ -8,4 +8,5 @@ jobs:
         runs-on: ubuntu-latest
         steps: #what will the job actaully do
             - name: Print Hello World  #list with "-"
-                run: echo Hello Worl  # what the job code is 
+              run: echo Hello World  # what the job code is, 
+              #add 2 spaces before the run  
